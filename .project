@@ -20,6 +20,7 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
+<<<<<<< HEAD
 		<buildCommand>
 			<name>com.aptana.ide.core.unifiedBuilder</name>
 			<arguments>
@@ -28,12 +29,17 @@
 	</buildSpec>
 	<natures>
 		<nature>com.aptana.projects.webnature</nature>
+=======
+	</buildSpec>
+	<natures>
+>>>>>>> bcf4d290a4484a97fb8e2cc1fcb9216cf3ff6774
 		<nature>org.eclipse.jem.workbench.JavaEMFNature</nature>
 		<nature>org.eclipse.wst.common.modulecore.ModuleCoreNature</nature>
 		<nature>org.eclipse.wst.common.project.facet.core.nature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
+<<<<<<< HEAD
 	<filteredResources>
 		<filter>
 			<id>1484454284580</id>
@@ -45,4 +51,6 @@
 			</matcher>
 		</filter>
 	</filteredResources>
+=======
+>>>>>>> bcf4d290a4484a97fb8e2cc1fcb9216cf3ff6774
 </projectDescription>

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+<<<<<<< HEAD
   <display-name>CBPM</display-name>
+=======
+  <display-name>NCSC</display-name>
+>>>>>>> bcf4d290a4484a97fb8e2cc1fcb9216cf3ff6774
   <welcome-file-list>
     <welcome-file>main.html</welcome-file>
   </welcome-file-list>
