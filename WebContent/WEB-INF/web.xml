@@ -6,6 +6,6 @@
   <display-name>NCSC</display-name>
 >>>>>>> bcf4d290a4484a97fb8e2cc1fcb9216cf3ff6774
   <welcome-file-list>
-    <welcome-file>main.html</welcome-file>
+    <welcome-file>index.html</welcome-file>
   </welcome-file-list>
 </web-app>
