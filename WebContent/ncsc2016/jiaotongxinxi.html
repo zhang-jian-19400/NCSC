@@ -200,9 +200,9 @@
     }
     
     //标注点数组
-    var markerArr = [{title:"花港海航大酒店",content:"地址：杭州 西湖区 杨公堤1号 (西湖风景区及灵隐度假区 近花港观鱼公园西大门)",point:"120.142971|30.23473",isOpen:0,icon:{w:23,h:25,l:46,t:21,x:9,lb:12}}
-		 ,{title:"杭州火车东站",content:"东站内乘坐地铁1号线至武林广场站下车（4站），换乘318路至浴鹄湾站车，步行150米到达酒店",point:"120.217818|30.295851",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
-		 ,{title:"杭州萧山机场",content:"我的备注",point:"120.441388|30.243388",isOpen:0,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}
+    var markerArr = [{title:"花港海航大酒店",content:"地址：杭州 西湖区 杨公堤1号 (西湖风景区及灵隐度假区 近花港观鱼公园西大门)",point:"120.142971|30.23473",isOpen:0,icon:{w:21,h:25,l:26,t:2,x:9,lb:12}}
+		 ,{title:"杭州火车东站",content:"东站内乘坐地铁1号线至武林广场站下车（4站），换乘318路至浴鹄湾站车，步行150米到达酒店",point:"120.217818|30.295851",isOpen:0,icon:{w:21,h:25,l:0,t:0,x:6,lb:12}}
+		 ,{title:"杭州萧山机场",content:"我的备注",point:"120.441388|30.243388",isOpen:0,icon:{w:21,h:25,l:50,t:1,x:6,lb:12}}
 		 ];
     //创建marker
     function addMarker(){
@@ -254,7 +254,7 @@
     }
     //创建一个Icon
     function createIcon(json){
-        var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+        var icon = new BMap.Icon("http://api.map.baidu.com/img/markers.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(0,-json.l),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(10,25)});
         return icon;
     }
     
