@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	    <meta http-equiv="pragma" content="no-cache"> 
+		<meta http-equiv="Cache-Control" content="no-cache, must-revalidate">
+	    <!-- viewport -->
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <!-- 360 -->
+	    <meta name="renderer" content="webkit">
+		<title></title>
+		<!-- External CSS -->
+	    <link href="css/hover.css" rel="stylesheet">
+	    <style>	   
+	    *{margin: 0;padding: 0;border: none;}
+	    #dituContent{width:650px;height:500px;margin-left:35px;margin-top: 10px;} 	
+	    .main{overflow: hidden;}
+		.main-navbar{width:250px;min-height: 100px;background-color: #ffffff;float: left;margin-left: 20px;font-family: "微软雅黑";}
+		.main-content{width: 800px;min-height: 100px;float: right;font-family: "宋体";margin-right: 20px;}
+		.main-navbar-ul li{list-style-type: none;padding-top: 10px;padding-bottom: 10px;border-bottom: 1px dotted #cccccc;}
+		.main-navbar-ul li a{text-decoration: none;color: #555555;font-size: 16px;}
+		.main-navbar-ul li a:hover{color: #00629d;}
+		.main-navbar-ul img{width: 8px;height: 12px;margin-right: 20px;}
+		.article-title{text-align: center;font-size: 24px;font-weight: bold;}
+		.article-title-type{text-align: center;font-size: 24px;margin-top: 20px;margin-bottom: 10px;font-weight: bold;}
+		.article-subtitle{font-size: 20px;margin-top: 25px;margin-bottom: 10px;font-weight: bold;color: #148ed3;}
+		p{text-indent: 2em;line-height: 23px;letter-spacing: 1px;}
+		.p-strong{font-weight: bold;}
+		.article-li-01{margin-left: 70px;margin-bottom: 5px;}
+		.article-li-02{margin-left: 50px;line-height: 22px;margin-bottom: 5px;}
+		.article-p-01{font-size: 17px;margin-top: 10px;margin-bottom: 6px;}
+		.main-content-table{width:100%;}
+		.main-content-table td{width: 50%;}
+		.main-content-table tr{height: 26px;}
+		.main-content-table .main-content-td-01{padding-left: 30px;}
+		.img-hotel{width: 430px;height: 350px;margin-left:35px;margin-top: 10px;}
+		.p-map{margin-top: 8px;}
+	    </style>
+	</head>
+
+	<body>
+		<div class="main">
+			<div class="main-navbar">
+				<ul class="main-navbar-ul">
+					<li><img src="http://kpnm.hnust.cn/confs/ncsc2017/img/arrow-01.png"><a href="#a">会场地址</a></li>
+					<li><img src="http://kpnm.hnust.cn/confs/ncsc2017/img/arrow-01.png"><a href="#b">地图</a></li>	
+				</ul>
+			</div>
+			<div class="main-content">
+				<!--<div class="article-title">2017年第八届中国计算机学会服务计算学术会议(NCSC2017)</div>
+				<div class="article-title-type">交通信息</div>-->
+			    <div class="article-subtitle" id="a">会场地址</div>
+			    <p>绿之韵大酒店</p>
+			    <p>地址：湘潭雨湖区九华经济开发区学府路1号新都汇一号楼</p>
+			    <p>电话：(0731)52686666</p>
+			    <img class="img-hotel" src="img/hotel.jpg" />
+			    <div class="article-subtitle" id="b">地图</div>
+			    <p>长沙黄花机场至会场：乘坐到湘潭的机场大巴至九华管委会下车，步行400米到达酒店。</p>
+			    <p class="p-map">湘潭火车站至会场：乘坐公交127路，或者河西综保区专线，或者29路，至红旗社区站下车，步行280米到达酒店。</p>
+			    <p class="p-map">湘潭高铁北站至会场：乘坐公交126路，或者101路，至红旗社区站下车，步行480米到达酒店。</p>
+			    <div id="dituContent"></div>
+			</div>
+		</div>
+			<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+	<script type="text/javascript">
+    //�����ͳ�ʼ����ͼ����
+    function initMap() {
+        createMap();//������ͼ
+        setMapEvent();//���õ�ͼ�¼�
+        addMapControl();//���ͼ��ӿؼ�
+        addMarker();//���ͼ�����marker
+    }
+
+    //������ͼ����
+    function createMap() {
+        var map = new BMap.Map("dituContent");//�ڰٶȵ�ͼ�����д���һ����ͼ
+        var point = new BMap.Point(113.0181581369,27.9715111468);//����һ�����ĵ����
+        map.centerAndZoom(point, 11);//�趨��ͼ�����ĵ����겢����ͼ��ʾ�ڵ�ͼ������
+        window.map = map;//��map�����洢��ȫ��
+    }
+
+    //��ͼ�¼����ú���
+    function setMapEvent() {
+        map.enableDragging();//���õ�ͼ��ק�¼���Ĭ������(�ɲ�д)
+        map.enableScrollWheelZoom();//���õ�ͼ���ַŴ���С
+        map.enableDoubleClickZoom();//�������˫���Ŵ�Ĭ������(�ɲ�д)
+        map.enableKeyboard();//���ü����������Ҽ��ƶ���ͼ
+    }
+
+    //��ͼ�ؼ���Ӻ���
+    function addMapControl() {
+        //���ͼ��������ſؼ�
+        var ctrl_nav = new BMap.NavigationControl({ anchor: BMAP_ANCHOR_TOP_LEFT, type: BMAP_NAVIGATION_CONTROL_LARGE });
+        map.addControl(ctrl_nav);
+        //���ͼ���������ͼ�ؼ�
+        var ctrl_ove = new BMap.OverviewMapControl({ anchor: BMAP_ANCHOR_BOTTOM_RIGHT, isOpen: 0 });
+        map.addControl(ctrl_ove);
+        //���ͼ����ӱ���߿ؼ�
+        var ctrl_sca = new BMap.ScaleControl({ anchor: BMAP_ANCHOR_BOTTOM_LEFT });
+        map.addControl(ctrl_sca);
+    }
+
+    //��ע������
+    var markerArr = [{ title: "长沙黄花机场", content: "乘坐到湘潭的机场大巴至九华管委会下车，步行400米到达酒店。", point: "113.2287616950|28.1943316398", isOpen: 0, icon: { w: 21, h: 21, l: 0, t: 0, x: 6, lb: 5 } }
+    ,{ title: "湘潭火车站", content: "乘坐公交127路，或者河西综保区专线，或者29路，至红旗社区站下车，步行280米到达酒店。", point: "112.9195061671|27.8813719312", isOpen: 0, icon: { w: 21, h: 21, l: 0, t: 0, x: 6, lb: 5 } }
+    ,{ title: "湘潭高铁北站", content: "乘坐公交126路，或者101路，至红旗社区站下车，步行480米到达酒店。", point: "112.9474107453|27.9706493284", isOpen: 0, icon: { w: 21, h: 21, l: 0, t: 0, x: 6, lb: 5 } }
+    ];
+    //����marker
+    function addMarker() {
+        for (var i = 0; i < markerArr.length; i++) {
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0, p1);
+            var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point, { icon: iconImg });
+            var iw = createInfoWindow(i);
+            var label = new BMap.Label(json.title, { "offset": new BMap.Size(json.icon.lb - json.icon.x + 10, -20) });
+            marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                borderColor: "#808080",
+                color: "#333",
+                cursor: "pointer"
+            });
+
+            (function () {
+                var index = i;
+                var _iw = createInfoWindow(i);
+                var _marker = marker;
+                _marker.addEventListener("click", function () {
+                    this.openInfoWindow(_iw);
+                });
+                _iw.addEventListener("open", function () {
+                    _marker.getLabel().hide();
+                })
+                _iw.addEventListener("close", function () {
+                    _marker.getLabel().show();
+                })
+                label.addEventListener("click", function () {
+                    _marker.openInfoWindow(_iw);
+                })
+                if (!!json.isOpen) {
+                    label.hide();
+                    _marker.openInfoWindow(_iw);
+                }
+            })()
+        }
+    }
+    //����InfoWindow
+    function createInfoWindow(i) {
+        var json = markerArr[i];
+        var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>" + json.content + "</div>");
+        return iw;
+    }
+    //����һ��Icon
+    function createIcon(json) {
+        var icon = new BMap.Icon("http://map.baidu.com/image/us_mk_icon.png", new BMap.Size(json.w, json.h), { imageOffset: new BMap.Size(-json.l, -json.t), infoWindowOffset: new BMap.Size(json.lb + 5, 1), offset: new BMap.Size(json.x, json.h) })
+        return icon;
+    }
+
+    initMap();//�����ͳ�ʼ����ͼ
+</script>
+	</body>
+</html>
